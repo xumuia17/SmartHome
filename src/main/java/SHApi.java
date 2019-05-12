@@ -18,7 +18,7 @@ public class SHApi {
     public static void main(String[] args){
 
         get("/sunrise", (req,res)->getSunrise());
-        get("/synchronize", (req,res)->"0,4,1");
+        get("/synchronize", (req,res)->"0,1,1");
     }
 
 
@@ -29,6 +29,7 @@ public class SHApi {
         String sunriseTime =json.getJSONObject("results").getString("sunrise");
         System.out.println(sunriseTime);
         return getSunriseInCurrentUTC(sunriseTime);
+
     }
     public static String getSunriseApi () throws IOException {
         String url ="https://api.sunrise-sunset.org/json?lat=51.76175102&lng=55.10937989&formatted=0";
